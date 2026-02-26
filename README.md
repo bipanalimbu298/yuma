@@ -1,146 +1,208 @@
-# Yuma Clothing
+# Yuma Clothing 🌿
 
-Production-ready e-commerce site for **Yuma Clothing** — ladies and kids clothing in Nepal. Built with Next.js 14, TypeScript, Tailwind, Redux, and integrations for COD, eSewa, Khalti, and email notifications.
+Production-ready **e-commerce website for Yuma Clothing** — a women’s and kids fashion brand based in Nepal.
+This project represents the official online store for **Yuma (yuma.com.np)**, inspired by *Mother Earth* — symbolizing elegance, warmth, femininity, and timeless fashion.
 
-## Features
+Built with **Next.js 14, TypeScript, Tailwind CSS, Redux Toolkit**, and integrated with Nepali payment solutions.
 
-- **Branding**: Yuma / Yuma Clothing across logo, meta tags, footer, and social links (Instagram, Facebook, WhatsApp).
-- **Categories**: Women (Dresses, Tops, Ethnic, Casual, Winter, Accessories) and Kids (Girls, Boys, Baby, Seasonal).
-- **E-commerce**: Product listing by category, product details, cart, checkout, order confirmation.
-- **Payments**: Cash on Delivery (COD) and Stripe (card). Configure `STRIPE_SECRET_KEY` for card payments.
-- **Email**: Order confirmation emails via Resend (set `RESEND_API_KEY` and `RESEND_FROM`).
-- **Admin**: `/admin` — view orders and products (orders stored in-memory by default; add Supabase for persistence).
-- **SEO & mobile**: Metadata, responsive layout, Vercel/Netlify ready.
+---
 
-## Table of Contents
+## ✨ Features
 
-- [Shopco](#shopco)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Demo](#demo)
-  - [Features](#features)
-  - [Technologies](#technologies)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Project Structure](#project-structure)
-  - [Contributing](#contributing)
-  - [Issues](#issues)
-  - [License](#license)
-  - [Contact](#contact)
+### 🌸 Branding
 
-## Overview
+* Yuma branding across logo, metadata, footer, and social links.
+* Nature-inspired luxury aesthetic reflecting femininity and elegance.
 
-Shopco bridges the gap between design and development by converting Figma designs into production-ready code. The project follows best practices for **SEO**, **performance optimization**, and **accessibility**, making it a perfect foundation for developers looking to create scalable and maintainable e-commerce front-ends.
+### 👗 Product Categories
 
-## Features
+* **Women:** Dresses, Tops, Ethnic Wear, Casual Wear, Winter Collection, Accessories.
+* **Kids:** Girls, Boys, Baby Collection, Seasonal Wear.
 
-- **Next.js 14**: Server-side rendering (SSR), Static Site Generation (SSG), optimized routing, and API integrations.
-- **TypeScript**: Strongly typed code for better error detection and maintainability.
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
-- **Redux**: State management for managing the shopping cart and other global states.
-- **Framer Motion**: Smooth animations and transitions for an enhanced user experience.
-- **ShadCN UI**: Beautifully styled, accessible, and customizable UI components.
-- **Fully Responsive**: Mobile-first design ensuring the layout adapts across devices.
-- **Performance Optimized**: Best practices followed for fast loading and interaction.
-- **Accessible**: Built with accessibility standards to provide an inclusive experience.
+### 🛒 E-commerce Functionality
 
-## Technologies
+* Product listings by category.
+* Product detail pages.
+* Shopping cart & checkout system.
+* Order confirmation flow.
 
-- **Next.js 14** - A popular React framework with built-in SSR and optimization.
-- **TypeScript** - A superset of JavaScript for strong typing and code consistency.
-- **Tailwind CSS** - A utility-first CSS framework for fast, responsive design.
-- **Redux** - A state management library used for the shopping cart and global app state.
-- **Framer Motion** - A library for animations and interactions in React.
-- **ShadCN UI** - A collection of beautiful, accessible, and customizable UI components.
-## Installation
+### 💳 Payment Options
 
-To get started with Shopco locally, follow these steps:
+* Cash on Delivery (COD).
+* Online payments integration:
 
-1. **Clone the repository:**
+  * eSewa
+  * Khalti
+  * Stripe (optional card payments).
 
-   ```bash
-   git clone https://github.com/mohammadoftadeh/next-ecommerce-shopco.git
-   cd next-ecommerce-shopco
-   ```
+### 📧 Email Notifications
 
-2. **Install dependencies:**
+* Order confirmation emails via Resend.
+* Configure:
 
-   ```bash
-   npm install
-   ```
+  * `RESEND_API_KEY`
+  * `RESEND_FROM`
 
-   ```bash
-   yarn install
-   ```
+### 🧑‍💼 Admin Dashboard
 
-3. **Run the development server:**
+* `/admin` panel for orders and product overview.
+* Orders stored in-memory by default (can integrate Supabase or database).
 
-   ```bash
-   npm run dev
-   ```
+### 📱 SEO & Performance
 
-   ```bash
-   yarn dev
-   ```
+* Mobile-first responsive design.
+* SEO optimized metadata.
+* Deployment ready for Vercel / Netlify.
 
-4. **Optional — environment variables:** Copy `.env.example` to `.env.local` and set:
-   - `STRIPE_SECRET_KEY` / `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` for card payments.
-   - `RESEND_API_KEY` and `RESEND_FROM` for order confirmation emails.
-   - Update WhatsApp/social URLs in the footer and contact page.
+---
 
-5. **Open in your browser:** [http://localhost:3000](http://localhost:3000)
+## 🚀 Technologies Used
 
-## Deployment (Vercel / Netlify)
+* **Next.js 14** — React framework with SSR and optimized routing.
+* **TypeScript** — Strong typing and maintainability.
+* **Tailwind CSS** — Utility-first styling.
+* **Redux Toolkit** — Global state management (cart & checkout).
+* **Framer Motion** — Smooth UI animations.
+* **ShadCN UI** — Accessible, customizable UI components.
 
-- **Vercel:** Push to GitHub and import the repo in [Vercel](https://vercel.com). Add env vars in the dashboard. Build command: `npm run build`; output: Next.js.
-- **Netlify:** Connect the repo, build command `npm run build`, publish directory `.next` and use the Netlify Next.js runtime (or `npx @netlify/plugin-nextjs`).
-- Set the same env vars in the deployment dashboard. Update `public/robots.txt` and your domain’s sitemap URL when live.
+---
 
-## Usage
+## ⚙️ Installation
 
-- **Main page:** `src/app/page.tsx`. **Products data:** `src/lib/data/products.ts`. **Categories:** `src/lib/constants/categories.ts`.
-- **Cart & checkout:** Redux cart in `src/lib/features/carts`. Checkout at `/checkout`; orders POST to `src/app/api/orders`.
-- **Admin:** Visit `/admin` to view orders and products. For persistent orders, integrate Supabase and replace the in-memory store in `src/app/api/orders/route.ts`.
-
-## Project Structure
+### 1️⃣ Clone Repository
 
 ```bash
-Shopco/
-│
-├── public/                # Static assets
-├── src/
-│   ├── app/               # Next.js App Router
-│   ├── components/        # Reusable components (including ShadCN UI components)
-│   └── lib/
-│       ├── features/      # The Redux logics for features (e.g., shopping cart)
-│       ├── hooks/         # Custom React hooks
-│       ├── store.ts       # Redux store
-│       ├── utils.ts       # Utility functions
-│   ├── styles/            # Tailwind CSS styles (global, utilities and fonts)
-│   ├── types/             # TypeScript types
-│
-├── components.json         # ShadCN UI configuration
-├── next.config.mjs         # Next.js configuration
-├── package.json            # Node.js dependencies and scripts
-├── postcss.config.mjs      # Post CSS configuration
-└── README.md               # Project documentation
-├── tailwind.config.js      # Tailwind CSS configuration
-├── tsconfig.json           # TypeScript configuration
+git clone https://github.com/bipanalimbu298/yuma-clothing.git
+cd yuma-clothing
 ```
 
-## Contributing
+### 2️⃣ Install Dependencies
 
-Contributions are welcome! If you'd like to contribute, Please follow these steps to contribute to Shopco:
+```bash
+npm install
+```
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature-name`).
-3. Make your changes.
-4. Push to the branch (`git push origin feature/your-feature-name`).
-5. Open a pull request.
+or
 
-## Issues
+```bash
+yarn install
+```
 
-Feel free to submit issues for any bugs, feature requests, or general questions related to the project. You can also reach out via [email](mailto:bipanal834@gmail.com) for support.
+### 3️⃣ Run Development Server
 
+```bash
+npm run dev
+```
 
+or
 
+```bash
+yarn dev
+```
+
+### 4️⃣ Environment Variables (Optional)
+
+Create `.env.local`:
+
+* `STRIPE_SECRET_KEY`
+* `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
+* `RESEND_API_KEY`
+* `RESEND_FROM`
+
+Also update:
+
+* WhatsApp contact link
+* Social media URLs
+* Domain references
+
+### 5️⃣ Open Browser
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🌐 Deployment
+
+### Vercel
+
+1. Push repo to GitHub.
+2. Import project in Vercel.
+3. Add environment variables.
+4. Deploy.
+
+### Netlify
+
+* Build command:
+
+```
+npm run build
+```
+
+* Publish directory:
+
+```
+.next
+```
+
+* Use Next.js runtime plugin.
+
+---
+
+## 📂 Project Structure
+
+```
+yuma-clothing/
+│
+├── public/                 # Static assets & images
+├── src/
+│   ├── app/                # Next.js App Router pages
+│   ├── components/         # Reusable UI components
+│   └── lib/
+│       ├── features/       # Redux features (cart etc.)
+│       ├── hooks/          # Custom hooks
+│       ├── store.ts        # Redux store
+│       ├── utils.ts        # Helper utilities
+│
+├── styles/                 # Tailwind styles
+├── types/                  # TypeScript types
+├── next.config.mjs
+├── tailwind.config.js
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+Steps:
+
+1. Fork repository.
+2. Create feature branch.
+3. Make changes.
+4. Push branch.
+5. Submit pull request.
+
+---
+
+## 🐞 Issues & Support
+
+If you find bugs, have suggestions, or need help:
+
+📧 Email: **[bipanal834@gmail.com](mailto:bipanal834@gmail.com)**
+
+---
+
+## 🌿 About Yuma
+
+**Yuma** represents feminine strength, nature, and timeless fashion inspired by the concept of *Mother Earth*.
+Our mission is to bring elegant, comfortable, and stylish clothing for women and kids while maintaining a modern global aesthetic rooted in Nepali warmth.
+
+---
+
+**© Yuma Clothing — All Rights Reserved**
