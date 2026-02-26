@@ -127,7 +127,7 @@ const TopNavbar = () => {
             </Link>
           </div>
           <CartBtn />
-          <Link href="/#signin" className="p-1">
+          <Link href="/signin" className="p-1">
             <Image
               priority
               src="/icons/user.svg"
