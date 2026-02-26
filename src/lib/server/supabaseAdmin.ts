@@ -10,3 +10,10 @@ export const supabaseAdmin = createClient(
     },
   }
 );
+
+export function getSupabaseAdmin(): typeof supabaseAdmin | null {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return null;
+  }
+  return supabaseAdmin;
+}
